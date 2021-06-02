@@ -10,6 +10,9 @@ var hour17 = document.querySelector("#hour17").innerText;
 
 var timeBlock = document.querySelector(".time-block");
 
+var textArea = document.querySelectorAll(".description");
+console.log(textArea);
+
 
 // Used Moment.js to print Current Time to jumbotron
 
@@ -22,23 +25,29 @@ console.log(militaryTime);
 
 // make a function called hourblock with for loop that starts at 9th hour and ends at 17th hour and increments. Compare for loop index with current time. And if index time is less than current time, then turn green: equal to it, be green and red be past using classes already set in css
 
+
+// change each textarea id to be 9 10 11.......
+// inside of for each element.classlist.add(backgroundColor (element.id))
+
 function hourBlock() {
-  for(i = 9; i <= 17; i++){
-    timeBlock.addClass(backgroundColor(i)
-  );
-  }
+  textArea.forEach(element => {
+    console.log(element.id)
+    element.classList.add(backgroundColor(element.id))
+    });
+    // textArea.classList.add(backgroundColor(i));
+    // console.log(militaryTime);
 }
 hourBlock();
 
 function backgroundColor(time){
   var backgroundClass; 
-  if (time < militaryTime) {
+  if (time > militaryTime) {
     backgroundClass = "past"
-  } else if 
-
+  } else if (time === militaryTime) {
+    backgroundClass = "present"
+  } else {backgroundClass = "future"}
   return backgroundClass;
 }
-
 // if text input, then save to local stoarge
 
 
@@ -53,12 +62,12 @@ $(".saveBtn").on("click", function () {
 });
 
 
-$("#event1").val(localStorage.getItem("event1"));
-$("#event2").val(localStorage.getItem("event2"));
-$("#event3").val(localStorage.getItem("event3"));
-$("#event4").val(localStorage.getItem("event4"));
-$("#event5").val(localStorage.getItem("event5"));
-$("#event6").val(localStorage.getItem("event6"));
-$("#event7").val(localStorage.getItem("event7"));
-$("#event8").val(localStorage.getItem("event8"));
-$("#event9").val(localStorage.getItem("event9"));
+$("#9").val(localStorage.getItem("9"));
+$("#10").val(localStorage.getItem("10"));
+$("#11").val(localStorage.getItem("11"));
+$("#12").val(localStorage.getItem("12"));
+$("#13").val(localStorage.getItem("13"));
+$("#14").val(localStorage.getItem("14"));
+$("#15").val(localStorage.getItem("15"));
+$("#16").val(localStorage.getItem("16"));
+$("#17").val(localStorage.getItem("17"));
