@@ -8,13 +8,36 @@ var hour15 = document.querySelector("#hour15").innerText;
 var hour16 = document.querySelector("#hour16").innerText;
 var hour17 = document.querySelector("#hour17").innerText;
 
+var timeBlock = document.querySelector(".time-block");
+
+
 // Used Moment.js to print Current Time to jumbotron
 
-var time = moment().format("LLLL");
-$("#currentDay").text(time);
+var currentTime = moment().format("LLLL");
+$("#currentDay").text(currentTime);
+
+var militaryTime = moment().format("H");
+console.log(militaryTime);
 
 
-// make a function called time with for loop that starts at 9th hour and ends at 17th hour and increments. Compare for loop index with current time. And if index time is less than current time, then turn green: equal to it, be green and red be past using classes already set in css
+// make a function called hourblock with for loop that starts at 9th hour and ends at 17th hour and increments. Compare for loop index with current time. And if index time is less than current time, then turn green: equal to it, be green and red be past using classes already set in css
+
+function hourBlock() {
+  for(i = 9; i <= 17; i++){
+    timeBlock.addClass(backgroundColor(i)
+  );
+  }
+}
+hourBlock();
+
+function backgroundColor(time){
+  var backgroundClass; 
+  if (time < militaryTime) {
+    backgroundClass = "past"
+  } else if 
+
+  return backgroundClass;
+}
 
 // if text input, then save to local stoarge
 
