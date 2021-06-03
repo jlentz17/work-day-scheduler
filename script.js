@@ -41,11 +41,13 @@ hourBlock();
 
 function backgroundColor(time){
   var backgroundClass; 
-  if (time > militaryTime) {
+  if (time < militaryTime) {
     backgroundClass = "past"
   } else if (time === militaryTime) {
     backgroundClass = "present"
-  } else {backgroundClass = "future"}
+  } else {
+    backgroundClass = "future"
+  }
   return backgroundClass;
 }
 // if text input, then save to local stoarge
