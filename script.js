@@ -8,6 +8,8 @@ var hour15 = document.querySelector("#hour15").innerText;
 var hour16 = document.querySelector("#hour16").innerText;
 var hour17 = document.querySelector("#hour17").innerText;
 
+
+
 var timeBlock = document.querySelector(".time-block");
 
 var textArea = document.querySelectorAll(".description");
@@ -19,8 +21,7 @@ console.log(textArea);
 var currentTime = moment().format("LLLL");
 $("#currentDay").text(currentTime);
 
-var militaryTime = moment().format("H");
-console.log(militaryTime);
+var militaryTime = parseInt(moment().format("H"));
 
 
 // make a function called hourblock with for loop that starts at 9th hour and ends at 17th hour and increments. Compare for loop index with current time. And if index time is less than current time, then turn green: equal to it, be green and red be past using classes already set in css
@@ -41,9 +42,9 @@ hourBlock();
 
 function backgroundColor(time){
   var backgroundClass; 
-  if (time < militaryTime) {
+  if (parseInt(time) < militaryTime) {
     backgroundClass = "past"
-  } else if (time === militaryTime) {
+  } else if (time == militaryTime) {
     backgroundClass = "present"
   } else {
     backgroundClass = "future"
