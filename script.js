@@ -23,16 +23,12 @@ $("#currentDay").text(currentTime);
 
 var militaryTime = parseInt(moment().format("H"));
 
-
-// make a function called hourblock with for loop that starts at 9th hour and ends at 17th hour and increments. Compare for loop index with current time. And if index time is less than current time, then turn green: equal to it, be green and red be past using classes already set in css
-
-
 // change each textarea id to be 9 10 11.......
 // inside of for each element.classlist.add(backgroundColor (element.id))
 
 function hourBlock() {
   textArea.forEach(element => {
-    console.log(element.id)
+    // console.log(element.id)
     element.classList.add(backgroundColor(element.id))
     });
     // textArea.classList.add(backgroundColor(i));
